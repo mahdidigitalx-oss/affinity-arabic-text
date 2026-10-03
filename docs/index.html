@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حل مشكلة الكتابة بالعربي في أفينيتي Affinity 3 | أداة النص العربي المجانية</title>
+<meta name="description" content="أداة مجانية مفتوحة المصدر تجعل Affinity 3 من Canva يكتب العربية بشكل صحيح: حروف متصلة، واتجاه من اليمين لليسار، وحركات، وكشيدة، وضبط للفقرات. حل نهائي لمشكلة الحروف العربية المقطعة والمقلوبة في أفينيتي ديزاينر.">
+<meta name="keywords" content="أفينيتي عربي, Affinity Arabic, افينتي, أفينيتي ديزاينر العربية, Affinity Designer Arabic, الحروف العربية مقطعة في أفينيتي, النص العربي مقلوب Affinity, Affinity 3 Canva Arabic, RTL, كشيدة, تشكيل">
+<link rel="canonical" href="https://mahdidigitalx-oss.github.io/affinity-arabic-text/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="حل مشكلة الكتابة بالعربي في Affinity 3">
+<meta property="og:description" content="اكتب العربية بشكل صحيح داخل أفينيتي: حروف متصلة، اتجاه صحيح، حركات وكشيدة. مجاني ومفتوح المصدر.">
+<meta property="og:url" content="https://mahdidigitalx-oss.github.io/affinity-arabic-text/">
+<meta property="og:image" content="https://mahdidigitalx-oss.github.io/affinity-arabic-text/images/after.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ar" href="https://mahdidigitalx-oss.github.io/affinity-arabic-text/">
+<link rel="alternate" hreflang="en" href="https://mahdidigitalx-oss.github.io/affinity-arabic-text/#english">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "النص العربي لـ Affinity (Arabic Text for Affinity)",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free open-source script that adds correct Arabic shaping, right-to-left text, harakat and kashida to Affinity 3 by Canva.",
+  "inLanguage": ["ar", "en"],
+  "downloadUrl": "https://github.com/mahdidigitalx-oss/affinity-arabic-text/releases/latest",
+  "softwareVersion": "1.3",
+  "license": "https://opensource.org/licenses/MIT",
+  "image": "https://mahdidigitalx-oss.github.io/affinity-arabic-text/images/after.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "لماذا تظهر الحروف العربية مقطعة ومقلوبة في Affinity؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لأن محرك النصوص في Affinity لا يدعم تشكيل الحروف العربية ولا الاتجاه من اليمين لليسار. أداة النص العربي تضيف محرك التشكيل HarfBuzz وخوارزمية Unicode Bidi داخل Affinity 3." } },
+    { "@type": "Question", "name": "هل تعمل الأداة مع Affinity Designer 2؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "لا، فهي تحتاج البرامج النصية الموجودة في Affinity 3 من Canva فقط." } },
+    { "@type": "Question", "name": "هل يبقى النص العربي قابلاً للتعديل؟",
+      "acceptedAnswer": { "@type": "Answer", "text": "نعم. النص الأصلي وإعداداته محفوظة داخل الشكل؛ حدّد الشكل وشغّل الأداة لتعديله." } },
+    { "@type": "Question", "name": "Why is Arabic text broken in Affinity Designer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Affinity's text engine has no Arabic shaping and no right-to-left (bidi) support, so letters appear disconnected and reversed. This free script adds HarfBuzz shaping and Unicode bidi inside Affinity 3." } }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7; --fg: #1d1b18; --muted: #6b665d; --card: #ffffff; --line: #e7e2d8;
+  --accent: #0f7b6c; --accent-fg: #ffffff; --bad: #b3261e; --good: #0f7b6c;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151413; --fg: #eeebe4; --muted: #a39d92; --card: #1f1e1c; --line: #34312c;
+          --accent: #3fb8a4; --accent-fg: #0d0d0c; --bad: #f2867e; --good: #3fb8a4; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif; line-height: 1.8; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.35; margin: 0 0 12px; }
+h2 { font-size: 1.45rem; margin: 48px 0 12px; }
+p.lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 24px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 32px; }
+.btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.btn.primary { background: var(--accent); color: var(--accent-fg); }
+.btn.ghost { border: 1px solid var(--line); color: var(--fg); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
+figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+figure img { width: 100%; height: auto; display: block; border-radius: 6px; background: #fff; }
+figcaption { font-size: .95rem; color: var(--muted); margin-top: 8px; text-align: center; }
+.bad { color: var(--bad); font-weight: 700; } .good { color: var(--good); font-weight: 700; }
+ul.features { padding-inline-start: 1.2em; }
+ul.features li { margin: 6px 0; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr; } }
+ol.steps li { margin: 10px 0; }
+code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: .92em; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 700; }
+#english { direction: ltr; text-align: left; border-top: 1px solid var(--line); margin-top: 56px; padding-top: 8px; }
+footer { color: var(--muted); font-size: .9rem; margin-top: 48px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>حل مشكلة الكتابة بالعربي في أفينيتي (Affinity 3)</h1>
+  <p class="lead">أداة مجانية مفتوحة المصدر تعمل داخل Affinity من Canva، فتكتب العربية بحروف متصلة واتجاه صحيح، مع الحركات والكشيدة وضبط الفقرات، وتحوّلها إلى أشكال فيكتور قابلة للتعديل لاحقاً.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/mahdidigitalx-oss/affinity-arabic-text/releases/latest">تحميل الأداة مجاناً</a>
+    <a class="btn ghost" href="https://github.com/mahdidigitalx-oss/affinity-arabic-text">المصدر على GitHub</a>
+  </div>
+
+  <div class="compare">
+    <figure><img src="images/before.png" alt="النص العربي في Affinity يظهر بحروف منفصلة ومقلوبة" width="1693" height="275"><figcaption><span class="bad">Affinity وحده:</span> حروف مقطّعة ومقلوبة</figcaption></figure>
+    <figure><img src="images/after.png" alt="النص العربي بعد أداة النص العربي: حروف متصلة وصحيحة" width="1411" height="332"><figcaption><span class="good">مع الأداة:</span> كتابة عربية صحيحة</figcaption></figure>
+  </div>
+
+  <h2>لماذا تظهر العربية مقطّعة ومقلوبة في Affinity؟</h2>
+  <p>محرك النصوص في Affinity Designer وPhoto وPublisher، وفي Affinity 3 الموحّد، لا يدعم <strong>تشكيل الحروف</strong>: فللحرف العربي حتى أربعة أشكال حسب موضعه، وAffinity يعرض الشكل المنفصل دائماً. ولا يدعم أيضاً <strong>الاتجاه من اليمين لليسار</strong>، فيرصّ الحروف بالعكس. لذلك لا ينفع تغيير الخط ولا لصق النص من برنامج آخر. هذه الأداة تضيف إلى Affinity محرّك التشكيل الحقيقي HarfBuzz المستخدم في المتصفحات وأندرويد، وخوارزمية الاتجاه الرسمية Unicode Bidi.</p>
+
+  <h2>المزايا</h2>
+  <figure><img src="images/dialog.png" alt="نافذة أداة النص العربي داخل Affinity بإعدادات الخط والفقرة والكشيدة" width="1022" height="716" loading="lazy"></figure>
+  <ul class="features">
+    <li>تكتب بأي خط عربي مثبّت على جهازك، مع ربط الحروف و«لا» و«الله» كما صُممت.</li>
+    <li>معاينة مباشرة على الصفحة أثناء الكتابة.</li>
+    <li>الخط والسماكة والمائل، والحجم، واللون.</li>
+    <li>المحاذاة: يمين ووسط ويسار وضبط، والضبط بالكشيدة كما في المطابع العربية.</li>
+    <li>تباعد الأسطر، وعرض محدد تلتفّ عنده الأسطر.</li>
+    <li>تمديد الكلمات بالكشيدة في كل الكلمات أو في كلمة واحدة في كل سطر.</li>
+    <li>إظهار الحركات أو إخفاؤها، وأرقام عربية أو إنجليزية، ومزج العربية بالإنجليزية.</li>
+    <li>شكل واحد، أو شكل لكل سطر أو لكل كلمة، أو الحركات في شكل منفصل.</li>
+    <li>قابل للتعديل لاحقاً مع الاحتفاظ بالتدرّج والحد والظل والتأثيرات.</li>
+  </ul>
+  <div class="gallery">
+    <figure><img src="images/kashida.png" alt="تمديد كلمة جميل بالكشيدة في Affinity" width="629" height="386" loading="lazy"><figcaption>تمديد الكلمات</figcaption></figure>
+    <figure><img src="images/harakat.png" alt="البسملة بالتشكيل الكامل في Affinity" width="1095" height="332" loading="lazy"><figcaption>الحركات</figcaption></figure>
+    <figure><img src="images/justify.png" alt="فقرة عربية مضبوطة بالكشيدة في Affinity" width="1018" height="713" loading="lazy"><figcaption>فقرة مضبوطة بالكشيدة</figcaption></figure>
+  </div>
+
+  <h2>التثبيت في ثلاث خطوات</h2>
+  <ol class="steps">
+    <li>حمّل ملف <code>ArabicText-for-Affinity</code> من <a href="https://github.com/mahdidigitalx-oss/affinity-arabic-text/releases/latest">صفحة الإصدارات</a> وفكّ ضغطه.</li>
+    <li>شغّل <code>install.cmd</code> بنقرة مزدوجة. لا يحتاج صلاحيات المدير.</li>
+    <li>في Affinity: فعّل البرامج النصية من <strong>Settings ← Scripting</strong>. ثم افتح لوحة <strong>Scripts Library</strong>، واضغط زر القائمة ☰ بجانب <strong>Default</strong>، ثم اختر <strong>Import Script…</strong> واختر ملف <code>.afscript</code>.</li>
+  </ol>
+  <p>المتطلبات: Windows 10 أو 11، وAffinity 3 من Canva.</p>
+
+  <h2>أسئلة شائعة</h2>
+  <details><summary>هل تعمل مع Affinity Designer 2؟</summary><p>لا، تحتاج البرامج النصية الموجودة في Affinity 3 فقط.</p></details>
+  <details><summary>إذا أرسلت الملف لشخص آخر، هل سيراه صحيحاً؟</summary><p>نعم. النص أشكال فيكتور، فيظهر صحيحاً على أي جهاز وفي PDF وSVG وPNG.</p></details>
+  <details><summary>هل يبقى النص قابلاً للتعديل؟</summary><p>نعم. حدّد الشكل وشغّل الأداة، فتفتح بنصك وإعداداتك.</p></details>
+  <details><summary>هل ترسل الأداة بيانات إلى الإنترنت؟</summary><p>لا، كل شيء يعمل على جهازك.</p></details>
+
+  <section id="english" lang="en">
+    <h2>Arabic text in Affinity: the fix</h2>
+    <p>Affinity Designer, Photo, Publisher and Affinity 3 by Canva cannot write Arabic: letters come out disconnected and reversed, because the text engine has no Arabic shaping and no right-to-left (bidi) support. <strong>Arabic Text for Affinity</strong> is a free, open-source script that adds HarfBuzz shaping and Unicode bidi inside Affinity 3. It has a live-preview dialog for font, size, colour, alignment, kashida justification, word stretching, harakat, digits and wrapping, and outputs editable vector shapes.</p>
+    <p><a href="https://github.com/mahdidigitalx-oss/affinity-arabic-text/releases/latest">Download for Windows</a> · <a href="https://github.com/mahdidigitalx-oss/affinity-arabic-text#english">Install guide</a></p>
+  </section>
+
+  <footer>مفتوح المصدر بترخيص MIT · يستخدم HarfBuzz وbidi-js · لا يتضمن أي خطوط، ويستخدم الخطوط المثبّتة على جهازك.</footer>
+</main>
+</body>
+</html>

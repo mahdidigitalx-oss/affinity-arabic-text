@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mahdidigitalx-oss.github.io/affinity-arabic-text/sitemap.xml

@@ -1,0 +1,10 @@
+node_modules/
+build/
+dist/
+release/
+# local development aids: probes, screenshots and Affinity's own SDK documentation
+dev/probes/
+dev/shots/
+dev/docs/
+dev/tools.json
+*.afscript

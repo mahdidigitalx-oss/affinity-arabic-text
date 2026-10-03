@@ -1,0 +1,37 @@
+{
+  "name": "affinity-arabic-text",
+  "version": "1.3.0",
+  "description": "Arabic text for Affinity 3 (by Canva): correct Arabic shaping, right-to-left, harakat and kashida as editable vector shapes.",
+  "scripts": {
+    "build:hb": "node tools/build-hb.mjs",
+    "build": "node tools/build.mjs",
+    "test": "node test/layout.test.cjs && node test/hb-node.test.mjs"
+  },
+  "keywords": [
+    "affinity",
+    "affinity-designer",
+    "affinity-3",
+    "canva",
+    "arabic",
+    "rtl",
+    "harfbuzz",
+    "kashida",
+    "typography"
+  ],
+  "author": "mahdidigitalx-oss",
+  "license": "MIT",
+  "dependencies": {
+    "bidi-js": "^1.1.0"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahdidigitalx-oss/affinity-arabic-text.git"
+  },
+  "homepage": "https://mahdidigitalx-oss.github.io/affinity-arabic-text/",
+  "devDependencies": {
+    "binaryen": "^132.0.0",
+    "esbuild": "^0.28.2",
+    "harfbuzzjs": "^1.6.2"
+  }
+}
